@@ -81,4 +81,6 @@ insert into students (name, date_of_birth, swimming_level, parent_id)
  alter table students add constraint fk_students_swimming_levels
     foreign key (level_id) references swimming_levels(level_id);
 
-/**/
+/* OFFSET IS TO SKIP XX. LIMIT IS TO SHOW FIRST XX */
+
+/* FYI Only full group by. Other than the aggregate, whatever you select you must group up*/
