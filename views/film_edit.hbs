@@ -1,0 +1,43 @@
+{{#extends 'base'}}
+
+{{#block 'content'}}
+<form method="POST">
+    <div>
+        <label>Title</label>
+        <input type="text" name="title" class="form-control" value="{{film.title}}"/>
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea class="form-control" name="description">{{film.description}}</textarea>
+    </div>
+    <div>
+        <label>Language</label>
+        <select name="language_id" class="form-control">
+            {{#each languages}}
+            <option value="{{this.language_id}}"
+                {{#eq this.language_id ../film.language_id}}
+                    selected
+                {{/eq}}
+                >{{this.name}}
+            </option>
+            {{/each}}
+        </select>
+    </div>
+    <div>
+        <label>Rental Duration</label>
+        <input type="text" name="rental_duration" class="form-control" value="{{film.rental_duration}}"/>
+    </div>
+    <div>
+        <label>Rental Rate</label>
+        <input type="text" name="rental_rate" class="form-control" value="{{film.rental_rate}}"/>
+    </div>
+    <div>
+        <label>Replacement Cost</label>
+        <input type="text" name="replacement_cost" class="form-control" value="{{film.replacement_cost}}"/>
+    </div>
+
+    <input type="submit" value="Update" class="btn btn-primary my-3"/>
+</form>
+{{/block}}
+
+{{/extends}}

@@ -1,0 +1,33 @@
+   
+{{#extends 'base'}}
+
+{{#block 'content'}}
+<form method="GET">
+    <div>
+        <label>Name:</label>
+        <input type="text" name="name" class="form-control"/>
+    </div>
+    <input type="submit" class="my-3 btn btn-primary"/>
+</form>
+<table class="table">
+        <thead>
+            <tr>
+                <th>Actor ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Last Update</th>
+            </tr>
+        </thead>
+        {{#each actors}}
+        <tr>
+            <td>{{this.actor_id}}</td>
+            <td>{{this.first_name}}</td>
+            <td>{{this.last_name}}</td>
+            <td>{{this.last_update}}</td>
+        </tr>
+
+        {{/each}}
+    </table>
+{{/block}}
+
+{{/extends}}
